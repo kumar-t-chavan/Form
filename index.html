@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f3f3f3;
+    }
+
+    #form {
+      border: 3px solid black;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 10px 20px 30px red;
+      font-variant: small-caps;
+      background-image: url("https://media.istockphoto.com/id/1160937711/vector/abstract-form-background.jpg?s=612x612&w=0&k=20&c=aaW8DiioqYzzGgj8aX9rQBbFjZ1De7isi5y2tyOz79g=");
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      padding: 10px 10px 10px 40px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #submit {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #submit:hover {
+      background-color: darkred;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .gender,
+    #checkbox {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="form">
+    <div>
+      <label for="username">Username :</label>
+      <input type="text" id="Username" placeholder="Enter Your Name" required />
+    </div>
+
+    <div>
+      <label for="email">Email :</label>
+      <input type="email" id="email" placeholder="Enter Your Email" required />
+    </div>
+
+    <div>
+      <label for="password">Password :</label>
+      <input type="password" id="password" placeholder="Enter Your Password" />
+    </div>
+
+    <div>
+      <label for="gender">Gender : </label><br />
+      <input type="radio" name="gender" class="gender" /> Male
+      <input type="radio" name="gender" class="gender" /> Female
+    </div>
+
+    <div>
+      <label for="married">Married : </label>
+      <input type="checkbox" id="checkbox" />
+    </div>
+
+    <div>
+      <label for="textarea">Message :</label>
+      <textarea id="textarea" rows="4" placeholder="Enter Your Comment..."></textarea>
+    </div>
+
+    <div>
+      <input type="submit" value="Submit" id="submit" />
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("submit").addEventListener("click", function () {
+      let name = document.getElementById("Username").value;
+      if (name) {
+        alert("Congratulations 🎉🎉🎉 " + name + "!");
+      } else {
+        alert("Please enter your name first.");
+      }
+    });
+  </script>
+</body>
+</html>
